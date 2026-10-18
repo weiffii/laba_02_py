@@ -1,0 +1,29 @@
+
+[project]
+name = "streamstats"
+version = "0.1.0"
+description = "A streaming file analyzer for CSV and JSONL event data that generates statistical reports."
+authors = [
+    { name = "Milana" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["typer (>=0.27.3,<0.28.0)"]
+
+[tool.poetry]
+packages = [
+    { include = "streamstats", from = "src" }
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+ignore = ["B008"]
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "ruff (>=0.17.1,<0.18.0)"
+]
